@@ -1,0 +1,17 @@
+@import "tippy.js/dist/tippy.css";
+@import "tippy.js/dist/border.css";
+@import "tippy.js/dist/svg-arrow.css";
+
+.tippy-box[data-theme~="tune"] {
+  @apply rounded-lg border border-solid border-border-color bg-input-bg-color px-[12px] py-[8px] text-sm text-heading-color;
+}
+
+/* The border */
+.tippy-box[data-theme~="tune"] > .tippy-svg-arrow > svg:first-child {
+  @apply fill-border-color;
+}
+
+/* The fill */
+.tippy-box[data-theme~="tune"] > .tippy-svg-arrow > svg:last-child {
+  @apply fill-input-bg-color;
+}

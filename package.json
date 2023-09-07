@@ -12,9 +12,35 @@
     "postinstall": "nuxt prepare .playground"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "^0.1.1",
-    "eslint": "^8.28.0",
+    "@histoire/plugin-nuxt": "^0.17.0",
+    "@histoire/plugin-vue": "^0.17.1",
+    "@nuxt/devtools": "^0.8.3",
+    "@nuxtjs/eslint-module": "^4.1.0",
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "@snapshot-labs/eslint-config-nuxt": "^0.1.0-beta.12",
+    "@tailwindcss/forms": "^0.5.6",
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/node": "^20.5.9",
+    "@vueuse/nuxt": "^10.4.1",
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "histoire": "^0.17.0",
     "nuxt": "^3.6.2",
+    "nuxt-headlessui": "^1.1.4",
+    "nuxt-lodash": "^2.5.0",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.4",
+    "sass": "^1.66.1",
+    "sass-loader": "^13.3.2",
     "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "@headlessui-float/vue": "^0.11.3",
+    "js-sha3": "^0.9.1",
+    "minisearch": "^6.1.0",
+    "nuxt-icon": "^0.5.0",
+    "nuxt-icons": "^3.2.1",
+    "vue-tippy": "^6.2.0"
   }
 }
