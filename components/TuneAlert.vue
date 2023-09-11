@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import IconExclamationCircle from '~icons/heroicons-outline/exclamation-circle'
-import IconExclamation from '~icons/heroicons-outline/exclamation'
-import IconSparkles from '~icons/heroicons-outline/sparkles'
-
-withDefaults(
+const props = withDefaults(
   defineProps<{
     variant?: 'default' | 'negative' | 'positive'
   }>(),
@@ -11,6 +7,12 @@ withDefaults(
     variant: 'default'
   }
 )
+
+const iconName = computed(() => {
+  if (props.variant === 'default') return 'heroicons-outline:exclamation-circle'
+  if (props.variant === 'negative') return 'heroicons-outline:exclamation'
+  return 'heroicons-outline:sparkles'
+})
 </script>
 
 <template>
@@ -27,11 +29,7 @@ withDefaults(
         { 'alert-negative': variant === 'negative' },
         { 'alert-positive': variant === 'positive' }
       ]"
-    >
-      <IconExclamationCircle v-if="variant === 'default'" />
-      <IconExclamation v-if="variant === 'negative'" />
-      <IconSparkles v-if="variant === 'positive'" />
-    </div>
+    ></div>
     <div class="tune-alert-text">
       <slot />
     </div>

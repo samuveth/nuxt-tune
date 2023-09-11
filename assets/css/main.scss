@@ -70,28 +70,28 @@
   --positive-active: rgba(87, 179, 117, 0.12);
 }
 
-body {
-  @apply font-sans text-base antialiased;
+* {
+  @apply font-serif text-base antialiased;
 }
 
 @layer base {
   @font-face {
-    font-family: "Calibre";
-    src: url("./assets/fonts/Calibre-Medium-Custom.woff2") format("woff2");
+    font-family: 'Calibre';
+    src: url('./assets/fonts/Calibre-Medium-Custom.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
   }
 
   @font-face {
-    font-family: "Calibre";
-    src: url("./assets/fonts/Calibre-Semibold-Custom.woff2") format("woff2");
+    font-family: 'Calibre';
+    src: url('./assets/fonts/Calibre-Semibold-Custom.woff2') format('woff2');
     font-weight: 600;
     font-style: normal;
   }
 
   @font-face {
-    font-family: "SpaceMono";
-    src: url("./assets/fonts/space-mono-v11-latin-700.woff2") format("woff2");
+    font-family: 'SpaceMono';
+    src: url('./assets/fonts/space-mono-v11-latin-700.woff2') format('woff2');
   }
 
   .tune-border-lg {
@@ -285,7 +285,7 @@ body {
   @apply text-sm text-text-color;
 }
 .tune-label-input {
-  @apply font-sans text-sm tracking-[0.32px] text-text-color;
+  @apply text-sm tracking-[0.32px] text-text-color;
 
   &.error {
     @apply text-danger-color;
@@ -415,7 +415,7 @@ body {
 }
 
 .tune-loading-bg {
-  @apply animate-pulse-fast bg-border-color;
+  @apply bg-border-color;
 }
 
 .tune-link-preview-wrapper {
@@ -441,20 +441,20 @@ body {
 }
 
 // Vue tippy
-@import "tippy.js/dist/tippy.css";
-@import "tippy.js/dist/border.css";
-@import "tippy.js/dist/svg-arrow.css";
+@import 'tippy.js/dist/tippy.css';
+@import 'tippy.js/dist/border.css';
+@import 'tippy.js/dist/svg-arrow.css';
 
-.tippy-box[data-theme~="tune"] {
+.tippy-box[data-theme~='tune'] {
   @apply rounded-lg border border-solid border-border-color bg-input-bg-color px-[12px] py-[8px] text-sm text-heading-color;
 }
 
 /* The border */
-.tippy-box[data-theme~="tune"] > .tippy-svg-arrow > svg:first-child {
+.tippy-box[data-theme~='tune'] > .tippy-svg-arrow > svg:first-child {
   @apply fill-border-color;
 }
 
 /* The fill */
-.tippy-box[data-theme~="tune"] > .tippy-svg-arrow > svg:last-child {
+.tippy-box[data-theme~='tune'] > .tippy-svg-arrow > svg:last-child {
   @apply fill-input-bg-color;
 }

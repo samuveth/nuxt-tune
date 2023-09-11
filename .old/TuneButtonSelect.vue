@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import TuneButton from './TuneButton.vue'
-import IconChevronDown from '~icons/heroicons-outline/chevron-down'
 
 withDefaults(
   defineProps<{
@@ -21,7 +20,9 @@ withDefaults(
   }
 )
 
-const emit = defineEmits(['select'])
+const emit = defineEmits<{
+  (event: 'select'): void
+}>()
 </script>
 
 <template>
@@ -41,8 +42,9 @@ const emit = defineEmits(['select'])
       <span class="flex items-center gap-1 truncate">
         <slot />
       </span>
-      <IconChevronDown
+      <Icon
         v-if="showChevron"
+        name="heroicons-outline:chevron-down"
         class="tune-input-chevron -mr-1 shrink-0 text-sm"
         :class="{ 'tune-input-chevron-up rotate-180': open }"
       />

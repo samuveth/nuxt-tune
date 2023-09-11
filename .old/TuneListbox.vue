@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import isEqual from 'lodash/isEqual'
 import TuneLabelInput from './TuneLabelInput.vue'
 import TuneErrorInput from './TuneErrorInput.vue'
-import IconChevronDown from '~icons/heroicons-outline/chevron-down'
+
 import IconCheck from '~icons/heroicons-outline/check'
 
 type ListboxItem = {
@@ -12,11 +13,10 @@ type ListboxItem = {
 }
 
 const props = defineProps<{
-  modelValue?: string[]
   items: ListboxItem[]
+  modelValue: any
   label: string
   placeholder?: string
-  limit?: number
   disabled?: boolean
   hint?: string
   error?: string
@@ -24,21 +24,14 @@ const props = defineProps<{
 
 const emit = defineEmits(['update:modelValue'])
 
-const selectedItems = computed({
+const selectedItem = computed({
   get: () =>
-    props.items.filter(item => props.modelValue?.includes(item.value)) || [],
+    props.items.find(item => isEqual(item.value, props.modelValue)) || null,
   set: newVal =>
-    emit(
-      'update:modelValue',
-      newVal.map(item => item.value)
-    )
+    newVal
+      ? emit('update:modelValue', newVal.value)
+      : emit('update:modelValue', '')
 })
-
-function isItemDisabled(item: string) {
-  if (!props.limit) return false
-  if (selectedItems.value.length < props.limit) return false
-  return !selectedItems.value.some(selectedItem => selectedItem.value === item)
-}
 
 const showErrorMessage = ref(false)
 
@@ -58,16 +51,15 @@ const isDisabled = computed(() => ({
 <template>
   <div>
     <HeadlessListbox
-      v-model="selectedItems"
+      v-model="selectedItem"
       as="div"
       :disabled="disabled"
-      multiple
     >
       <div class="relative">
         <HeadlessListboxButton
           v-slot="{ open }"
+          class="tune-input-wrapper relative w-full truncate !pr-[40px] text-left"
           :class="[
-            'tune-input-wrapper relative w-full truncate pl-3 pr-[40px] text-left',
             { 'cursor-not-allowed': disabled },
             {
               error: showErrorMessage && error
@@ -85,26 +77,20 @@ const isDisabled = computed(() => ({
             />
           </HeadlessListboxLabel>
 
-          <div
-            class="tune-listbox-selected"
-            :class="isDisabled"
-          >
+          <div :class="['tune-listbox-selected', isDisabled]">
             <span
-              v-if="selectedItems.length < 1"
+              v-if="!selectedItem"
               :class="['tune-placeholder']"
             >
               {{ placeholder || 'Select option' }}
             </span>
             <slot
-              v-else-if="$slots.selected"
+              v-if="$slots.selected"
               name="selected"
-              :selected-items="selectedItems"
+              :selected-item="selectedItem"
             />
-
             <span v-else>
-              {{
-                selectedItems.map(item => item?.name || item.value).join(', ')
-              }}
+              {{ selectedItem?.name || selectedItem?.value }}
             </span>
           </div>
 
@@ -112,7 +98,8 @@ const isDisabled = computed(() => ({
             class="absolute inset-y-[12px] right-[12px] flex items-end px-2"
             :class="isDisabled"
           >
-            <IconChevronDown
+            <Icon
+              name="heroicons-outline:chevron-down"
               :class="[
                 'tune-input-chevron text-base',
                 { 'tune-input-chevron-up rotate-180': open }
@@ -133,12 +120,11 @@ const isDisabled = computed(() => ({
           >
             <div class="max-h-[180px] overflow-y-auto">
               <HeadlessListboxOption
-                v-for="(item, i) in items"
-                :key="i"
+                v-for="item in items"
+                :key="item.value"
                 v-slot="{ active, selected, disabled: itemDisabled }"
                 as="template"
                 :value="item"
-                :disabled="isItemDisabled(item.value)"
               >
                 <li
                   :class="[
@@ -146,7 +132,9 @@ const isDisabled = computed(() => ({
                     'tune-list-item relative cursor-default select-none truncate !pr-[50px]'
                   ]"
                 >
-                  <span :class="[{ disabled: itemDisabled }, 'block truncate']">
+                  <span
+                    :class="[{ 'opacity-40': itemDisabled }, 'block truncate']"
+                  >
                     <slot
                       v-if="$slots.item"
                       name="item"

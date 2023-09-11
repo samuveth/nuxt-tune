@@ -7,6 +7,8 @@ import { HstNuxt } from '@histoire/plugin-nuxt'
 export default defineConfig({
   plugins: [HstVue(), HstNuxt()],
   setupFile: './histoire-setup.ts',
+  outDir: '.histoire/dist',
+  storyMatch: ['./components/*.stories.ts'],
   theme: {
     defaultColorScheme: 'light',
     title: 'Tune UI',

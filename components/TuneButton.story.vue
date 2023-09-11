@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import TuneButton from './TuneButton.vue'
-import LightningBoltIcon from '~icons/heroicons-outline/lightning-bolt'
 </script>
 
 <template>
@@ -9,21 +8,15 @@ import LightningBoltIcon from '~icons/heroicons-outline/lightning-bolt'
       <div class="space-y-3">
         <TuneButton> Button </TuneButton>
         <TuneButton>
-          <template #icon>
-            <LightningBoltIcon />
-          </template>
+          <template #icon> 😊 </template>
           Button
         </TuneButton>
         <TuneButton>
-          <template #iconRight>
-            <LightningBoltIcon />
-          </template>
+          <template #iconRight> 😊 </template>
           Button
         </TuneButton>
         <TuneButton circle>
-          <template #icon>
-            <LightningBoltIcon />
-          </template>
+          <template #icon> 😊 </template>
         </TuneButton>
       </div>
     </Variant>
@@ -32,24 +25,18 @@ import LightningBoltIcon from '~icons/heroicons-outline/lightning-bolt'
       <div class="space-y-3">
         <TuneButton variant="outlined"> Button </TuneButton>
         <TuneButton variant="outlined">
-          <template #icon>
-            <LightningBoltIcon />
-          </template>
+          <template #icon> 😊 </template>
           Button
         </TuneButton>
         <TuneButton variant="outlined">
-          <template #iconRight>
-            <LightningBoltIcon />
-          </template>
+          <template #iconRight> 😊 </template>
           Button
         </TuneButton>
         <TuneButton
           variant="outlined"
           circle
         >
-          <template #icon>
-            <LightningBoltIcon />
-          </template>
+          <template #icon> 😊 </template>
         </TuneButton>
       </div>
     </Variant>
@@ -58,24 +45,18 @@ import LightningBoltIcon from '~icons/heroicons-outline/lightning-bolt'
       <div class="space-y-3">
         <TuneButton variant="danger"> Button </TuneButton>
         <TuneButton variant="danger">
-          <template #icon>
-            <LightningBoltIcon />
-          </template>
+          <template #icon> 😊 </template>
           Button
         </TuneButton>
         <TuneButton variant="danger">
-          <template #iconRight>
-            <LightningBoltIcon />
-          </template>
+          <template #iconRight> 😊 </template>
           Button
         </TuneButton>
         <TuneButton
           variant="danger"
           circle
         >
-          <template #icon>
-            <LightningBoltIcon />
-          </template>
+          <template #icon> 😊 </template>
         </TuneButton>
       </div>
     </Variant>
@@ -84,24 +65,18 @@ import LightningBoltIcon from '~icons/heroicons-outline/lightning-bolt'
       <div class="space-y-3">
         <TuneButton variant="positive"> Button </TuneButton>
         <TuneButton variant="positive">
-          <template #icon>
-            <LightningBoltIcon />
-          </template>
+          <template #icon> 😊 </template>
           Button
         </TuneButton>
         <TuneButton variant="positive">
-          <template #iconRight>
-            <LightningBoltIcon />
-          </template>
+          <template #iconRight> 😊 </template>
           Button
         </TuneButton>
         <TuneButton
           variant="positive"
           circle
         >
-          <template #icon>
-            <LightningBoltIcon />
-          </template>
+          <template #icon> 😊 </template>
         </TuneButton>
       </div>
     </Variant>
@@ -110,24 +85,18 @@ import LightningBoltIcon from '~icons/heroicons-outline/lightning-bolt'
       <div class="space-y-3">
         <TuneButton disabled> Button </TuneButton>
         <TuneButton disabled>
-          <template #icon>
-            <LightningBoltIcon />
-          </template>
+          <template #icon> 😊 </template>
           Button
         </TuneButton>
         <TuneButton disabled>
-          <template #iconRight>
-            <LightningBoltIcon />
-          </template>
+          <template #iconRight> 😊 </template>
           Button
         </TuneButton>
         <TuneButton
           circle
           disabled
         >
-          <template #icon>
-            <LightningBoltIcon />
-          </template>
+          <template #icon> 😊 </template>
         </TuneButton>
       </div>
     </Variant>
@@ -144,18 +113,14 @@ import LightningBoltIcon from '~icons/heroicons-outline/lightning-bolt'
           variant="outlined"
           disabled
         >
-          <template #icon>
-            <LightningBoltIcon />
-          </template>
+          <template #icon> 😊 </template>
           Button
         </TuneButton>
         <TuneButton
           variant="outlined"
           disabled
         >
-          <template #iconRight>
-            <LightningBoltIcon />
-          </template>
+          <template #iconRight> 😊 </template>
           Button
         </TuneButton>
         <TuneButton
@@ -163,9 +128,7 @@ import LightningBoltIcon from '~icons/heroicons-outline/lightning-bolt'
           circle
           disabled
         >
-          <template #icon>
-            <LightningBoltIcon />
-          </template>
+          <template #icon> 😊 </template>
         </TuneButton>
       </div>
     </Variant>

@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     'nuxt-icons'
   ],
   devtools: { enabled: true },
-  css: ['~/assets/css/main.scss', '~/assets/css/tippy.scss'],
+  css: ['~/assets/css/main.scss'],
   tailwindcss: {
     cssPath: '~/assets/css/main.scss'
   },

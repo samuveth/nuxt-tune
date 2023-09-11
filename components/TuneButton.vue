@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import TuneLoadingSpinner from './TuneLoadingSpinner.vue'
-
 withDefaults(
   defineProps<{
     type?: 'button' | 'submit' | 'reset'
@@ -42,8 +40,7 @@ withDefaults(
       <slot name="icon" />
     </div>
 
-    <TuneLoadingSpinner v-if="loading" />
-    <slot v-else />
+    <slot />
 
     <div
       v-if="$slots.iconRight"

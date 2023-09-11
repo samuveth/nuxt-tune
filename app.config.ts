@@ -1,6 +1,9 @@
 export default defineAppConfig({
   myLayer: {
     name: 'Hello from Nuxt layer'
+  },
+  nuxtIcon: {
+    size: '24px'
   }
 })
 

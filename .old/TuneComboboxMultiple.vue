@@ -3,7 +3,7 @@ import { ref, computed } from 'vue'
 import MiniSearch from 'minisearch'
 import TuneLabelInput from './TuneLabelInput.vue'
 import TuneTag from './TuneTag.vue'
-import IconChevronDown from '~icons/heroicons-outline/chevron-down'
+
 import IconCheck from '~icons/heroicons-outline/check'
 
 type ComboboxItem = {
@@ -120,7 +120,8 @@ const filteredItems = computed(() => {
         class="absolute inset-y-[12px] right-[12px] flex items-end px-2 focus:outline-none"
         :class="{ 'cursor-not-allowed': disabled }"
       >
-        <IconChevronDown
+        <Icon
+          name="heroicons-outline:chevron-down"
           :class="[
             'tune-input-chevron text-base',
             { 'tune-input-chevron-up rotate-180': open }
